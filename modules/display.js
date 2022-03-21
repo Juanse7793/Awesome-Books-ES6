@@ -9,7 +9,7 @@ if (localStorage.book) {
   listOfBooks.array = local;
 }
 
-export default function display() {
+const display = () => {
   notDuplicate();
   listOfBooks.array.forEach((book) => {
     const cdiv = document.createElement('div');
@@ -31,7 +31,7 @@ export default function display() {
       return listOfBooks.remove(book.title, book.author);
     });
   });
-}
+};
 
 const book = document.getElementById('form');
 const bookElement = book.querySelectorAll('input');
@@ -46,3 +46,5 @@ bookElement[2].addEventListener('click', (e) => {
     e.preventDefault();
   }
 });
+
+export default display;
