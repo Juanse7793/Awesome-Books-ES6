@@ -3,12 +3,12 @@ export default class MainBooks {
     this.array = [];
   }
 
-  lStorage() {
+  lStorage = () => {
     const convertToLocalStorage = JSON.stringify(this.array);
     localStorage.setItem('book', convertToLocalStorage);
   }
 
-  addBook(title, author) {
+  addBook = (title, author) => {
     const newBook1 = {
       title,
       author,
@@ -18,7 +18,7 @@ export default class MainBooks {
     this.lStorage();
   }
 
-  remove(title, author) {
+  remove = (title, author) => {
     this.array = this.array.filter((book) => book.title !== title || book.author !== author);
     this.lStorage();
   }
